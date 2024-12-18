@@ -1,0 +1,6 @@
+@Sp_practise_HostAddress = http://localhost:5237
+
+GET {{Sp_practise_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
