@@ -27,7 +27,10 @@ namespace Sp_practise
             services.AddTransient<IEmployeeRepository, Employeerepository>();
             services.AddTransient<IEmployeeService, EmployeeService>();
 
-            services.AddSingleton(new FirebaseService(_configuration["Firebase:bucketName"], _configuration["Firebase:firebaseStorageUrl"]));
+            string bucketName = "practice-bdcd1.appspot.com"; // Replace with your actual bucket name
+            string firebaseStorageUrl = $"https://firebasestorage.googleapis.com/v0/b/{bucketName}/o/";
+
+            services.AddSingleton( new FirebaseService(bucketName, firebaseStorageUrl));
             services.AddTransient<IFirebaseUploadImageService, FireBaseUploadImageService>();
 
             services.AddAutoMapper(typeof(Startup));

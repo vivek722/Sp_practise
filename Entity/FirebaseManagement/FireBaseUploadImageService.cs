@@ -33,7 +33,7 @@ namespace Entity.FirebaseManagement
         public async Task<string> FireBaseUploadImageAsync(string fileName, string filePath, string folderName)
         {
             var storage = new FirebaseStorage(_storage._bucketName);
-            var DowloadUrl = await storage.Child(folderName).Child(fileName).PutAsync(File.OpenRead(filePath));
+                var DowloadUrl = await storage.Child(folderName).Child(fileName).PutAsync(File.OpenRead(filePath));
             return DowloadUrl;
         }
     }
